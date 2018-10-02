@@ -12,7 +12,7 @@ public class TaskScheduler {
     @Autowired
     private UserMapper userMapper;
 
-    @Scheduled(cron = "0/2 * * * * *")
+//    @Scheduled(cron = "0/2 * * * * *")
     public void insertTask(){
 
         UserEntity userEntity = new UserEntity();
