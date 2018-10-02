@@ -8,4 +8,5 @@ public interface UserMapper {
 
     UserEntity select(String userName);
 
+    void insert(UserEntity userEntity);
 }

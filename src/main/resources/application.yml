@@ -25,6 +25,8 @@ spring:
 #        poolPreparedStatements: true
 #        maxOpenPreparedStatements: 20
 
+
+
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 mybatis:
 
@@ -38,3 +40,16 @@ mybatis:
 #    reasonable: true
 #    supportMethodsArguments: true
 #    params: count=countSql
+
+
+## Dubbo 服务提供者配置
+#spring:
+#  dubbo:
+#    application:
+#      name: provider    #服务名称
+#    registry:
+#      address: zookeeper://127.0.0.1:2181   #注册中心地址
+#    protocol:
+#      name: dubbo     #dubbo 协议
+#      port: 20880
+#    scan: com.jaycekon.dubbo.service     #声明需要暴露的服务接口

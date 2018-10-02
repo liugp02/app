@@ -12,5 +12,10 @@
         select * from xes_user where userName =#{userName};
     </select>
 
+    <insert id="insert" parameterType="com.pdgz.app.entity.UserEntity">
+        INSERT INTO xes_user
+        (userId,userName,passWord)
+         VALUE (#{userId},#{name},#{passWord});
+    </insert>
 
 </mapper>
