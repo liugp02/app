@@ -12,6 +12,8 @@ import com.github.stuxuhai.jpinyin.PinyinHelper;
 @SpringBootTest
 public class AppApplicationTests {
 
+
+
 	@Test
 	public void contextLoads() throws PinyinException {
 		String name ="刘";
