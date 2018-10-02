@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdgz.app.mapper.UserMapper">
+    <resultMap id="ResultMap" type="com.pdgz.app.entity.UserEntity">
+        <result column="id" property="id"></result>
+        <result column="userId" property="userId"></result>
+        <result column="userName" property="name"></result>
+        <result column="password" property="passWord"></result>
+    </resultMap>
+    
+    <select id="select" resultMap="ResultMap" parameterType="java.lang.String">
+        select * from xes_user where userName =#{userName};
+    </select>
+
+
+</mapper>
