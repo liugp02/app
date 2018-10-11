@@ -42,5 +42,15 @@ public class UserController {
         return new Result(false,RestServerStateCodeContant.CHECK_PWD_LOCK,"","");
     }
 
+    @RequestMapping(value = "/insertList")
+    public void insertList(){
+        this.userService.insertList();
+    }
+
+    @RequestMapping(value = "/updateUserList")
+    public void  updateUserList(){
+        this.userService.updateUserList();
+    }
+
 
 }

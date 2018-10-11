@@ -3,7 +3,7 @@ package com.pdgz.app.entity;
 public class UserEntity {
     private String id;
     private String userId;
-    private String name;
+    private String userName;
     private String passWord;
 
     public String getId() {
@@ -14,12 +14,12 @@ public class UserEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassWord() {
@@ -43,7 +43,7 @@ public class UserEntity {
         return "UserEntity{" +
                 "id='" + id + '\'' +
                 ", userId='" + userId + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + userName + '\'' +
                 ", passWord='" + passWord + '\'' +
                 '}';
     }

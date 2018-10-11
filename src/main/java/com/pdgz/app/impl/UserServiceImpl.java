@@ -7,6 +7,10 @@ import com.pdgz.app.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 
 @Service
 public class UserServiceImpl implements IUserService{
@@ -33,4 +37,34 @@ public class UserServiceImpl implements IUserService{
         }
         return result;
     }
+
+    @Override
+    public int insertList() {
+        List<UserEntity> list = new ArrayList<>();
+        UserEntity userEntity = new UserEntity();
+        userEntity.setId(UUID.randomUUID()+"");
+        userEntity.setUserId("0001");
+        userEntity.setUserName("测试0001");
+        UserEntity userEntity1 = new UserEntity();
+        userEntity1.setId(UUID.randomUUID()+"");
+        userEntity1.setUserId("0002");
+        userEntity1.setUserName("测试0002");
+        list.add(userEntity);
+        list.add(userEntity1);
+        userMapper.insertList(list);
+        return 0;
+    }
+
+    @Override
+    public void updateUserList() {
+        List<UserEntity> list = new ArrayList<>();
+        UserEntity userEntity = new UserEntity();
+        userEntity.setPassWord("123");
+        UserEntity userEntity1 = new UserEntity();
+        userEntity1.setPassWord("456");
+        list.add(userEntity);
+        list.add(userEntity1);
+        this.userMapper.updateUserList(list);
+    }
+
 }
