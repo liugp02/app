@@ -4,7 +4,7 @@
     <resultMap id="ResultMap" type="com.pdgz.app.entity.UserEntity">
         <result column="id" property="id"></result>
         <result column="userId" property="userId"></result>
-        <result column="userName" property="name"></result>
+        <result column="userName" property="userName"></result>
         <result column="password" property="passWord"></result>
     </resultMap>
     
@@ -18,4 +18,24 @@
          VALUE (#{userId},#{name},#{passWord});
     </insert>
 
+    <insert id="insertList" parameterType="java.util.List">
+        INSERT  into xes_user
+        (id,userId,userName,passWord)
+        VALUES
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.id},#{item.userId},#{item.userName},#{item.passWord})
+        </foreach>
+    </insert>
+
+    <update id="updateUserList" parameterType="java.util.List">
+    UPDATE  xes_user
+    <trim prefix="set" suffixOverrides=",">
+        <trim prefix="passWord  = case" suffix="end,">
+            <foreach collection="list" item="item" index="index">
+                when passWord =#{item.passWord} THEN  #{item.passWord}
+            </foreach>
+        </trim>
+    </trim>
+        where passWord is NULL
+    </update>
 </mapper>

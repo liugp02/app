@@ -16,7 +16,7 @@ public class TaskScheduler {
     public void insertTask(){
 
         UserEntity userEntity = new UserEntity();
-        userEntity.setName("测试2");
+        userEntity.setUserName("测试2");
         userEntity.setPassWord("12345");
         userEntity.setUserId("0002");
         userMapper.insert(userEntity);
